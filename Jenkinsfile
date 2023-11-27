@@ -12,12 +12,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                sudo -s
-                curl -O https://storage.googleapis.com/golang/go1.13.5.linux-amd64.tar.gz
-                tar -xvf go1.13.5.linux-amd64.tar.gz
-                mv go /usr/local
-                echo "export PATH=$PATH:/usr/local/go/bin >> ~/.profile
-                source ~/.profile
+                cd myapp
+                pip install -r requirements.txt
                 '''
             }
         }
@@ -25,7 +21,9 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                go version
+                cd myapp
+                python3 hello.py
+                python3 hello.py --name=Brad
                 '''
             }
         }
