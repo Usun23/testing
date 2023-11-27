@@ -13,7 +13,6 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                USER root
                 apt-get update && apt-get install -y python3
                 apt install pip
                 USER jenkins
