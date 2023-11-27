@@ -12,9 +12,6 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                apt-get update && apt-get install -y python3
-                apt install pip
-                USER jenkins
                 cd app
                 pip install -r requirements.txt --break-system-packages
                 '''
