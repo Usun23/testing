@@ -12,6 +12,8 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
+                apt install python3
+                apt install pip
                 cd app
                 pip install -r requirements.txt --break-system-packages
                 '''
