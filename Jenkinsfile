@@ -2,7 +2,6 @@ pipeline {
     agent { 
         node {
             label 'Docker1'
-            args '--user 0:0'
             }
       }
     triggers {
